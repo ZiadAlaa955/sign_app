@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_app/Views/sign_in_view.dart';
-import 'package:sign_app/main.dart';
+import 'package:sign_app/Widgets/text_sliding_animation.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -12,24 +11,13 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
+
   late Animation<Offset> slidingAnimation;
 
   @override
   void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 900),
-    );
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero).animate(
-      CurvedAnimation(parent: animationController, curve: Curves.easeOut),
-    );
-
-    animationController.forward();
-
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, 'SignInView');
-    });
+    initSlidingAnimation();
+    navigateToSignIn();
 
     super.initState();
   }
@@ -62,20 +50,28 @@ class _SplashViewState extends State<SplashView>
                 )
               ],
             ),
-            SlideTransition(
-              position: slidingAnimation,
-              child: const Text(
-                '  لترجمة لغة الإشارة',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            TextSlideAnimation(slidingAnimation: slidingAnimation),
           ],
         ),
       ),
     );
+  }
+
+  void navigateToSignIn() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushNamed(context, 'SignInView');
+    });
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    );
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero).animate(
+      CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+    );
+    animationController.forward();
   }
 }
