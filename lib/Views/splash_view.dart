@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sign_app/Widgets/text_sliding_animation.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sign_app/Widgets/splash_content.dart';
+import 'package:sign_app/helper/app_router.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -33,33 +35,14 @@ class _SplashViewState extends State<SplashView>
     return Scaffold(
       backgroundColor: const Color(0xff648DDC),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(height: 110, image: AssetImage('assets/images/ok.png')),
-                Text(
-                  'تواصُل',
-                  style: TextStyle(
-                    fontSize: 50,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
-            ),
-            TextSlideAnimation(slidingAnimation: slidingAnimation),
-          ],
-        ),
+        child: SplashContent(slidingAnimation: slidingAnimation),
       ),
     );
   }
 
   void navigateToSignIn() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, 'SignInView');
+      context.go(AppRouter.kHomeView);
     });
   }
 
