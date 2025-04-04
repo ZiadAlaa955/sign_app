@@ -5,10 +5,6 @@ class TestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('TestScreen'),
-      ),
-    );
+    return const Scaffold();
   }
 }

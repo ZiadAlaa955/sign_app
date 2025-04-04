@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tawasel/helper/constants.dart';
 import '../helper/app_router.dart';
 
 class MainBottomNavigationBar extends StatelessWidget {
@@ -10,27 +11,30 @@ class MainBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
+      type: BottomNavigationBarType.shifting,
       currentIndex: currentIndex,
-      selectedItemColor: Colors.blue,
+      selectedItemColor: kPrimaryColor,
       unselectedItemColor: Colors.grey,
       onTap: (index) {
         switch (index) {
           // case 0:
-          //   context.go(AppRouter.kHomeScreen);
+          //   context.go(AppRouter.kHomeView);
           //   break;
           // case 1:
           //   context.go(AppRouter.kAlphaScreen);
           //   break;
           case 2:
-            context.go(AppRouter.kHomeView);
+            GoRouter.of(context).push(AppRouter.kHomeView);
+            // context.go(AppRouter.kHomeView);
             break;
           case 3:
             GoRouter.of(context).push(AppRouter.kLearningContentScreen);
+            // context.go(AppRouter.kLearningContentScreen);
             break;
-          // case 4:
-          //   context.go(AppRouter.kProfileScreen);
-          //   break;
+          case 4:
+            GoRouter.of(context).push(AppRouter.kProfileView);
+            // context.go(AppRouter.kProfileView);
+            break;
         }
       },
       items: const [

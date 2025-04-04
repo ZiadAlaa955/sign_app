@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_app/helper/app_router.dart';
+import 'package:tawasel/helper/app_router.dart';
+import 'package:tawasel/helper/app_theme_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: appThemeData(),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      theme: ThemeData(fontFamily: 'Poppins'),
     );
   }
 }

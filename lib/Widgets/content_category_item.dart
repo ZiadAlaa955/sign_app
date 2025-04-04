@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:sign_app/helper/app_router.dart';
 
 class ContentCategoryItem extends StatelessWidget {
-  const ContentCategoryItem({
-    super.key,
-    required this.text,
-  });
+  const ContentCategoryItem(
+      {super.key, required this.text, required this.onTap});
   final String text;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: GestureDetector(
-        onTap: () {
-          GoRouter.of(context).push(AppRouter.kTestScreen);
-          //context.go(AppRouter.kTestScreen);
-        },
+        onTap: onTap,
         child: Container(
           height: 85,
           width: double.infinity,
@@ -33,7 +27,6 @@ class ContentCategoryItem extends StatelessWidget {
                   text,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontFamily: "Poppins",
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
                   ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_app/Widgets/text_sliding_animation.dart';
+import 'package:tawasel/widgets/text_sliding_animation.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({super.key, required this.slidingAnimation});

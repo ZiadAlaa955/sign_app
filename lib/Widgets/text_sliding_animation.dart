@@ -12,7 +12,10 @@ class TextSlideAnimation extends StatelessWidget {
       child: const Text(
         '  لترجمة لغة الإشارة',
         style: TextStyle(
-            fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
+          fontSize: 30,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
