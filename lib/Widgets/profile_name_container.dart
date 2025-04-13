@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tawasel/helper/constants.dart';
+import 'package:tawasel/widgets/auth_widgets/log_in_body.dart';
 
 class ProfileNameContainer extends StatelessWidget {
   const ProfileNameContainer({super.key});
@@ -16,20 +17,20 @@ class ProfileNameContainer extends StatelessWidget {
           top: Radius.circular(20),
         ),
       ),
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Ziad Alaa',
-            style: TextStyle(
+            userData!.user.name,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 27,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            'Ziadalaa955@gmail.com',
-            style: TextStyle(
+            userData!.user.email,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 15,
               fontWeight: FontWeight.w100,

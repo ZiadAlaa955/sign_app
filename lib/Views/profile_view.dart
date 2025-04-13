@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawasel/Models/auth_models/auth_api_success_response_model.dart';
 import 'package:tawasel/widgets/profile_progress_card.dart';
 import 'package:tawasel/widgets/customer_support_card.dart';
 import 'package:tawasel/widgets/edit_profile_card.dart';
@@ -58,7 +59,7 @@ class ProfileView extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: MainBottomNavigationBar(currentIndex: 4),
+        bottomNavigationBar: const MainBottomNavigationBar(currentIndex: 4),
       ),
     );
   }

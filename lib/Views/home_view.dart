@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
             child: Column(
               children: [
                 HomeAppBar(),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 HomeBody(),
               ],
             ),

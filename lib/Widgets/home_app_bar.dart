@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tawasel/Models/auth_models/auth_api_success_response_model.dart';
+import 'package:tawasel/Models/auth_models/user_model.dart';
+import 'package:tawasel/widgets/auth_widgets/log_in_body.dart';
 import 'package:tawasel/widgets/profile_icon.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -23,36 +26,11 @@ class HomeAppBar extends StatelessWidget {
             const ProfileIcon(),
           ],
         ),
-        const Text(
-          'Ziad Alaa',
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+        Text(
+          userData!.user.name,
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ],
     );
   }
 }
-  // const SizedBox(width: 12),
-            // Card(
-            //   color: Colors.grey[300],
-            //   elevation: 2,
-            //   child: Padding(
-            //     padding: const EdgeInsets.all(7),
-            //     child: Row(
-            //       children: [
-            //         const Text(
-            //           'تواصل',
-            //           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-            //         ),
-            //         const SizedBox(width: 5),
-            //         Image.network(
-            //           height: 35,
-            //           'https://cdn-icons-png.flaticon.com/128/4384/4384350.png',
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            // Text(
-            //   'مرحباً "$userName" ',
-            //   style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
-            // ),

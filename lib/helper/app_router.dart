@@ -4,15 +4,14 @@ import 'package:tawasel/views/home_view.dart';
 import 'package:tawasel/views/learning_content_screen.dart';
 import 'package:tawasel/views/letters_content_screen.dart';
 import 'package:tawasel/views/letters_exam_screen.dart';
-import 'package:tawasel/views/login_view.dart';
+import 'package:tawasel/views/auth_views/login_view.dart';
 import 'package:tawasel/views/numbers_content_screen.dart';
 import 'package:tawasel/views/numbers_exam_screen.dart';
-import 'package:tawasel/views/password_recovery_view.dart';
+import 'package:tawasel/views/auth_views/password_recovery_view.dart';
 import 'package:tawasel/views/profile_view.dart';
-import 'package:tawasel/views/sign_up_view.dart';
+import 'package:tawasel/views/auth_views/sign_up_view.dart';
 import 'package:tawasel/views/splash_view.dart';
 import 'package:tawasel/views/test_screen.dart';
-import 'package:tawasel/views/words_content_screen.dart';
 import 'package:tawasel/views/words_exam_screen.dart';
 
 abstract class AppRouter {

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
-import 'package:tawasel/views/password_recovery_view.dart';
+import 'package:tawasel/views/auth_views/password_recovery_view.dart';
 
 class verification_code extends StatelessWidget {
   verification_code({Key? key}) : super(key: key);

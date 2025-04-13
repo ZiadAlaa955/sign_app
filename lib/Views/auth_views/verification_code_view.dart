@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tawasel/widgets/verification_code.dart';
+import 'package:tawasel/widgets/auth_widgets/verification_code.dart';
 
 class verification_code_view extends StatelessWidget {
   const verification_code_view({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tawasel/widgets/Password%20recovery.dart';
+import 'package:tawasel/widgets/auth_widgets/Password%20recovery.dart';
 
 class password_recovery_view extends StatelessWidget {
   const password_recovery_view({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class password_recovery_view extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: Password_recovery(),
       ),
     );
