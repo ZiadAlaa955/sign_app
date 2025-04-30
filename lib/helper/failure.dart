@@ -49,7 +49,7 @@ class ServerFailure extends Failure {
       case 400:
       case 401:
       case 403:
-        return ServerFailure(errorMessage: 'Bad response. Please try again.');
+      // return ServerFailure(errorMessage: 'Bad response. Please try again.');
       case 422:
         return ServerFailure(
           errorMessage: errorData.passwordError ??

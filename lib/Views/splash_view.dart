@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tawasel/helper/app_router.dart';
 import 'package:tawasel/helper/constants.dart';
-import 'package:tawasel/widgets/splash_content.dart';
+import 'package:tawasel/widgets/splash_widgets/splash_content.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

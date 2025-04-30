@@ -5,7 +5,10 @@ import 'package:tawasel/helper/constants.dart';
 import '../helper/app_router.dart';
 
 class MainBottomNavigationBar extends StatelessWidget {
-  const MainBottomNavigationBar({super.key, required this.currentIndex});
+  const MainBottomNavigationBar({
+    super.key,
+    required this.currentIndex,
+  });
 
   final int currentIndex;
 

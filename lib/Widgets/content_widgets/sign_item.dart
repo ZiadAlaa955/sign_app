@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:tawasel/Models/content_models/item_model.dart';
+import 'package:tawasel/helper/constants.dart';
+import 'package:tawasel/widgets/content_widgets/sign_video_item.dart';
+
+class SignItem extends StatelessWidget {
+  const SignItem({super.key, required this.itemModel});
+  final ItemModel itemModel;
+  @override
+  Widget build(BuildContext context) {
+    bool isVideo = itemModel.mediaPath.endsWith('.mp4');
+    return Card(
+      margin: EdgeInsets.zero,
+      elevation: 0,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            isVideo
+                ? SignVideoItem(videoPath: itemModel.mediaPath)
+                : AspectRatio(
+                    aspectRatio: 1.5,
+                    child: Image.network(
+                      itemModel.mediaPath,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+            const SizedBox(height: 10),
+            Text(
+              itemModel.text,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

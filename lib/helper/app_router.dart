@@ -1,18 +1,21 @@
 import 'package:go_router/go_router.dart';
-import 'package:tawasel/views/exam_screen.dart';
+import 'package:tawasel/Models/auth_models/auth_api_success_response_model.dart';
+import 'package:tawasel/views/auth_views/verification_code_view.dart';
+import 'package:tawasel/views/exam_screens/exam_screen.dart';
 import 'package:tawasel/views/home_view.dart';
-import 'package:tawasel/views/learning_content_screen.dart';
-import 'package:tawasel/views/letters_content_screen.dart';
-import 'package:tawasel/views/letters_exam_screen.dart';
+import 'package:tawasel/views/content_screens/learning_content_screen.dart';
+import 'package:tawasel/views/content_screens/letters_content_screen.dart';
+import 'package:tawasel/views/exam_screens/letters_exam_screen.dart';
 import 'package:tawasel/views/auth_views/login_view.dart';
-import 'package:tawasel/views/numbers_content_screen.dart';
-import 'package:tawasel/views/numbers_exam_screen.dart';
+import 'package:tawasel/views/content_screens/numbers_content_screen.dart';
+import 'package:tawasel/views/exam_screens/numbers_exam_screen.dart';
 import 'package:tawasel/views/auth_views/password_recovery_view.dart';
 import 'package:tawasel/views/profile_view.dart';
 import 'package:tawasel/views/auth_views/sign_up_view.dart';
 import 'package:tawasel/views/splash_view.dart';
 import 'package:tawasel/views/test_screen.dart';
-import 'package:tawasel/views/words_exam_screen.dart';
+import 'package:tawasel/views/content_screens/words_content_screen.dart';
+import 'package:tawasel/views/exam_screens/words_exam_screen.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
@@ -30,6 +33,7 @@ abstract class AppRouter {
   static const kNumbersExamScreen = '/numbersExamScreen';
   static const kWordsExamScreen = '/wordsExamScreen';
   static const kPasswordRecoveryView = '/passwordRecoveryView';
+  static const kVerificationCodeView = '/verificationCodeView';
 
   static final router = GoRouter(
     routes: [
@@ -55,7 +59,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kLearningContentScreen,
-        builder: (context, state) => const LearningContentScreen(),
+        builder: (context, state) => LearningContentScreen(),
       ),
       GoRoute(
         path: kloginView,
@@ -65,13 +69,15 @@ abstract class AppRouter {
         path: kSignUpView,
         builder: (context, state) => const SignUpView(),
       ),
-      // GoRoute(
-      //   path: kWordsScreen,
-      //   builder: (context, state) => WordsScreen(),
-      // ),
+      GoRoute(
+        path: kWordsScreen,
+        builder: (context, state) => WordsContentScreen(),
+      ),
       GoRoute(
         path: kHomeView,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) => HomeView(
+            // userData: state.extra as AuthApiSuccessResponse,
+            ),
       ),
       GoRoute(
         path: kTestScreen,
@@ -79,7 +85,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kPasswordRecoveryView,
-        builder: (context, state) => const password_recovery_view(),
+        builder: (context, state) => const PasswordRecoveryView(),
       ),
       GoRoute(
         path: kLettersScreen,
@@ -91,7 +97,11 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kProfileView,
-        builder: (context, state) => const ProfileView(),
+        builder: (context, state) => ProfileView(),
+      ),
+      GoRoute(
+        path: kVerificationCodeView,
+        builder: (context, state) => const VerificationCodeView(),
       ),
     ],
   );

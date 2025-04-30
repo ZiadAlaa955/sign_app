@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawasel/Cubits/auth_cubit/auth_cubit.dart';
+import 'package:tawasel/bloc_observer.dart';
 import 'package:tawasel/helper/app_router.dart';
 import 'package:tawasel/helper/app_theme_data.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 

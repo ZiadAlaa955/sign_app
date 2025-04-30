@@ -18,7 +18,11 @@ class LogInWelcomeSection extends StatelessWidget {
             color: kPrimaryColor,
             fontSize: 27,
             fontWeight: FontWeight.bold,
-            shadows: const [Shadow(blurRadius: 1)],
+            shadows: const [
+              Shadow(
+                blurRadius: 1,
+              ),
+            ],
           ),
         ),
         const SizedBox(height: 5),

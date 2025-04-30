@@ -4,22 +4,26 @@ import 'package:tawasel/Models/auth_models/auth_api_success_response_model.dart'
 import 'package:tawasel/helper/Api.dart';
 import 'package:tawasel/helper/failure.dart';
 
-class LoginService {
-  Future<Either<Failure, AuthApiSuccessResponse>> loginUser({
+class UpdateDataService {
+  Future<Either<Failure, AuthApiSuccessResponse>> updateUser({
     required String email,
-    required String password,
+    required String userName,
+    required String token,
   }) async {
     try {
-      dynamic jsonData = await Api().post(
-        url: 'https://finalproject.mass-fluence.com/api/login',
-        data: {
-          'email': email,
-          'password': password,
-        },
+      dynamic jsonData = await Api().put(
+        url: 'https://finalproject.mass-fluence.com/api/update-profile',
+        userName: userName,
+        email: email,
+        token: token,
       );
 
-      AuthApiSuccessResponse successData =
-          AuthApiSuccessResponse.fromJson(jsonData);
+      AuthApiSuccessResponse successData = AuthApiSuccessResponse(
+        user: AuthApiSuccessResponse.fromJson(jsonData).user,
+        message: AuthApiSuccessResponse.fromJson(jsonData).message,
+        statusCode: AuthApiSuccessResponse.fromJson(jsonData).statusCode,
+        token: token,
+      );
 
       return Right(successData);
     } on DioException catch (e) {
