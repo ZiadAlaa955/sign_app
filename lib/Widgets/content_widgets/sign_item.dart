@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:tawasel/Models/content_models/item_model.dart';
 import 'package:tawasel/helper/constants.dart';
@@ -23,13 +24,15 @@ class SignItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             isVideo
-                ? SignVideoItem(videoPath: itemModel.mediaPath)
+                ? (itemModel.localImagePath != null
+                    ? SignVideoItem(videoPath: itemModel.localImagePath!)
+                    : const Text("جاري تحميل الفيديو..."))
                 : AspectRatio(
                     aspectRatio: 1.5,
-                    child: Image.network(
-                      itemModel.mediaPath,
-                      fit: BoxFit.contain,
-                    ),
+                    child: // عرض الصورة المحفوظة محليًا
+                        itemModel.localImagePath != null
+                            ? Image.file(File(itemModel.localImagePath!))
+                            : const Text("لا توجد صورة"),
                   ),
             const SizedBox(height: 10),
             Text(

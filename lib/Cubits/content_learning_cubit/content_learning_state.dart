@@ -1,18 +1,17 @@
-part of 'content_learning_cubit.dart';
+import 'package:tawasel/Models/content_models/item_model.dart';
 
-@immutable
-sealed class ContentLearningState {}
+abstract class ContentState {}
 
-class ContentInitial extends ContentLearningState {}
+class ContentInitial extends ContentState {}
 
-class ContentLoading extends ContentLearningState {}
+class ContentLoading extends ContentState {}
 
-class ContentSuccess extends ContentLearningState {
+class ContentSuccess extends ContentState {
   final List<ItemModel> items;
   ContentSuccess(this.items);
 }
 
-class ContentError extends ContentLearningState {
+class ContentError extends ContentState {
   final String message;
   ContentError(this.message);
 }

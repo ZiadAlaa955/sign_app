@@ -21,9 +21,9 @@ class MainBottomNavigationBar extends StatelessWidget {
       unselectedItemColor: Colors.grey,
       onTap: (index) {
         switch (index) {
-          // case 0:
-          //   context.go(AppRouter.kHomeView);
-          //   break;
+          case 0:
+            context.push(AppRouter.kVideoTranselateView);
+            break;
           // case 1:
           //   context.go(AppRouter.kAlphaScreen);
           //   break;

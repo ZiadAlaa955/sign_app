@@ -13,7 +13,7 @@ class HomeBody extends StatelessWidget {
           title: 'ترجمة فيديو',
           icon: Icons.videocam,
           onTap: () {
-            GoRouter.of(context).push(AppRouter.kTestScreen);
+            GoRouter.of(context).push(AppRouter.kVideoTranselateView);
           }),
       HomeCardItem(
           title: 'ترجمة نص',
